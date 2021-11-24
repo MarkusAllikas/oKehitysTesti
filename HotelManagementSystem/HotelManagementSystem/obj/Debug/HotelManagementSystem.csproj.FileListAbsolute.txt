@@ -1,0 +1,10 @@
+C:\Users\marku\source\repos\HotelManagementSystem\HotelManagementSystem\bin\Debug\HotelManagementSystem.exe.config
+C:\Users\marku\source\repos\HotelManagementSystem\HotelManagementSystem\bin\Debug\HotelManagementSystem.exe
+C:\Users\marku\source\repos\HotelManagementSystem\HotelManagementSystem\bin\Debug\HotelManagementSystem.pdb
+C:\Users\marku\source\repos\HotelManagementSystem\HotelManagementSystem\obj\Debug\HotelManagementSystem.csproj.AssemblyReference.cache
+C:\Users\marku\source\repos\HotelManagementSystem\HotelManagementSystem\obj\Debug\HotelManagementSystem.Kirjautuminen.resources
+C:\Users\marku\source\repos\HotelManagementSystem\HotelManagementSystem\obj\Debug\HotelManagementSystem.Properties.Resources.resources
+C:\Users\marku\source\repos\HotelManagementSystem\HotelManagementSystem\obj\Debug\HotelManagementSystem.csproj.GenerateResource.cache
+C:\Users\marku\source\repos\HotelManagementSystem\HotelManagementSystem\obj\Debug\HotelManagementSystem.csproj.CoreCompileInputs.cache
+C:\Users\marku\source\repos\HotelManagementSystem\HotelManagementSystem\obj\Debug\HotelManagementSystem.exe
+C:\Users\marku\source\repos\HotelManagementSystem\HotelManagementSystem\obj\Debug\HotelManagementSystem.pdb
