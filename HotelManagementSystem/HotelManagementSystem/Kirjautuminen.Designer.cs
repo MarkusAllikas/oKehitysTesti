@@ -33,11 +33,11 @@ namespace HotelManagementSystem
             this.panel1 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.KayttajaTunnusLB = new System.Windows.Forms.Label();
-            this.salasanaLB = new System.Windows.Forms.Label();
-            this.KayttajaTunnusTB = new System.Windows.Forms.TextBox();
-            this.SalasanaTB = new System.Windows.Forms.TextBox();
             this.KirjauduBT = new System.Windows.Forms.Button();
+            this.SalasanaTB = new System.Windows.Forms.TextBox();
+            this.KayttajaTunnusTB = new System.Windows.Forms.TextBox();
+            this.salasanaLB = new System.Windows.Forms.Label();
+            this.KayttajaTunnusLB = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel1.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -86,17 +86,32 @@ namespace HotelManagementSystem
             this.groupBox1.TabIndex = 2;
             this.groupBox1.TabStop = false;
             // 
-            // KayttajaTunnusLB
+            // KirjauduBT
             // 
-            this.KayttajaTunnusLB.AutoSize = true;
-            this.KayttajaTunnusLB.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.KayttajaTunnusLB.ForeColor = System.Drawing.Color.White;
-            this.KayttajaTunnusLB.Location = new System.Drawing.Point(7, 40);
-            this.KayttajaTunnusLB.Name = "KayttajaTunnusLB";
-            this.KayttajaTunnusLB.Size = new System.Drawing.Size(161, 25);
-            this.KayttajaTunnusLB.TabIndex = 0;
-            this.KayttajaTunnusLB.Text = "Käyttäjätunnus:";
-            this.KayttajaTunnusLB.Click += new System.EventHandler(this.label2_Click);
+            this.KirjauduBT.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.KirjauduBT.Location = new System.Drawing.Point(73, 192);
+            this.KirjauduBT.Name = "KirjauduBT";
+            this.KirjauduBT.Size = new System.Drawing.Size(319, 54);
+            this.KirjauduBT.TabIndex = 4;
+            this.KirjauduBT.Text = "Kirjaudu";
+            this.KirjauduBT.UseVisualStyleBackColor = true;
+            this.KirjauduBT.Click += new System.EventHandler(this.KirjauduBT_Click);
+            // 
+            // SalasanaTB
+            // 
+            this.SalasanaTB.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.SalasanaTB.Location = new System.Drawing.Point(200, 112);
+            this.SalasanaTB.Name = "SalasanaTB";
+            this.SalasanaTB.Size = new System.Drawing.Size(245, 22);
+            this.SalasanaTB.TabIndex = 3;
+            // 
+            // KayttajaTunnusTB
+            // 
+            this.KayttajaTunnusTB.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.KayttajaTunnusTB.Location = new System.Drawing.Point(200, 43);
+            this.KayttajaTunnusTB.Name = "KayttajaTunnusTB";
+            this.KayttajaTunnusTB.Size = new System.Drawing.Size(245, 22);
+            this.KayttajaTunnusTB.TabIndex = 2;
             // 
             // salasanaLB
             // 
@@ -109,31 +124,17 @@ namespace HotelManagementSystem
             this.salasanaLB.TabIndex = 1;
             this.salasanaLB.Text = "Salasana:";
             // 
-            // KayttajaTunnusTB
+            // KayttajaTunnusLB
             // 
-            this.KayttajaTunnusTB.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.KayttajaTunnusTB.Location = new System.Drawing.Point(200, 43);
-            this.KayttajaTunnusTB.Name = "KayttajaTunnusTB";
-            this.KayttajaTunnusTB.Size = new System.Drawing.Size(245, 22);
-            this.KayttajaTunnusTB.TabIndex = 2;
-            // 
-            // SalasanaTB
-            // 
-            this.SalasanaTB.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.SalasanaTB.Location = new System.Drawing.Point(200, 112);
-            this.SalasanaTB.Name = "SalasanaTB";
-            this.SalasanaTB.Size = new System.Drawing.Size(245, 22);
-            this.SalasanaTB.TabIndex = 3;
-            // 
-            // KirjauduBT
-            // 
-            this.KirjauduBT.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.KirjauduBT.Location = new System.Drawing.Point(73, 192);
-            this.KirjauduBT.Name = "KirjauduBT";
-            this.KirjauduBT.Size = new System.Drawing.Size(319, 54);
-            this.KirjauduBT.TabIndex = 4;
-            this.KirjauduBT.Text = "Kirjaudu";
-            this.KirjauduBT.UseVisualStyleBackColor = true;
+            this.KayttajaTunnusLB.AutoSize = true;
+            this.KayttajaTunnusLB.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.KayttajaTunnusLB.ForeColor = System.Drawing.Color.White;
+            this.KayttajaTunnusLB.Location = new System.Drawing.Point(7, 40);
+            this.KayttajaTunnusLB.Name = "KayttajaTunnusLB";
+            this.KayttajaTunnusLB.Size = new System.Drawing.Size(161, 25);
+            this.KayttajaTunnusLB.TabIndex = 0;
+            this.KayttajaTunnusLB.Text = "Käyttäjätunnus:";
+            this.KayttajaTunnusLB.Click += new System.EventHandler(this.label2_Click);
             // 
             // Kirjautuminen
             // 
