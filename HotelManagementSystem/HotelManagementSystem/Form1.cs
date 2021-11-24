@@ -16,5 +16,10 @@ namespace HotelManagementSystem
         {
             InitializeComponent();
         }
+
+        private void Paaikkuna_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }
