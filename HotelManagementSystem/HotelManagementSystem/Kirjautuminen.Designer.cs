@@ -55,7 +55,7 @@ namespace HotelManagementSystem
             // 
             // panel1
             // 
-            this.panel1.BackColor = System.Drawing.SystemColors.Highlight;
+            this.panel1.BackColor = System.Drawing.Color.RoyalBlue;
             this.panel1.Controls.Add(this.label1);
             this.panel1.Location = new System.Drawing.Point(12, 191);
             this.panel1.Name = "panel1";
@@ -88,29 +88,32 @@ namespace HotelManagementSystem
             // 
             // KirjauduBT
             // 
+            this.KirjauduBT.BackColor = System.Drawing.Color.RoyalBlue;
             this.KirjauduBT.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.KirjauduBT.ForeColor = System.Drawing.Color.White;
             this.KirjauduBT.Location = new System.Drawing.Point(73, 192);
             this.KirjauduBT.Name = "KirjauduBT";
             this.KirjauduBT.Size = new System.Drawing.Size(319, 54);
             this.KirjauduBT.TabIndex = 4;
             this.KirjauduBT.Text = "Kirjaudu";
-            this.KirjauduBT.UseVisualStyleBackColor = true;
+            this.KirjauduBT.UseVisualStyleBackColor = false;
             this.KirjauduBT.Click += new System.EventHandler(this.KirjauduBT_Click);
             // 
             // SalasanaTB
             // 
-            this.SalasanaTB.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.SalasanaTB.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.SalasanaTB.Location = new System.Drawing.Point(200, 112);
             this.SalasanaTB.Name = "SalasanaTB";
-            this.SalasanaTB.Size = new System.Drawing.Size(245, 22);
+            this.SalasanaTB.Size = new System.Drawing.Size(245, 26);
             this.SalasanaTB.TabIndex = 3;
+            this.SalasanaTB.UseSystemPasswordChar = true;
             // 
             // KayttajaTunnusTB
             // 
-            this.KayttajaTunnusTB.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.KayttajaTunnusTB.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.KayttajaTunnusTB.Location = new System.Drawing.Point(200, 43);
             this.KayttajaTunnusTB.Name = "KayttajaTunnusTB";
-            this.KayttajaTunnusTB.Size = new System.Drawing.Size(245, 22);
+            this.KayttajaTunnusTB.Size = new System.Drawing.Size(245, 26);
             this.KayttajaTunnusTB.TabIndex = 2;
             // 
             // salasanaLB
