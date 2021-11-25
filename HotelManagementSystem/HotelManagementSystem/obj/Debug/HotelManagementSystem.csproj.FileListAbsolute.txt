@@ -58,3 +58,4 @@ C:\Users\marku\source\oKehitysTesti\oKehitysTesti\HotelManagementSystem\HotelMan
 C:\Users\marku\source\oKehitysTesti\oKehitysTesti\HotelManagementSystem\HotelManagementSystem\obj\Debug\HotelManagementSystem.csproj.CopyComplete
 C:\Users\marku\source\oKehitysTesti\oKehitysTesti\HotelManagementSystem\HotelManagementSystem\obj\Debug\HotelManagementSystem.exe
 C:\Users\marku\source\oKehitysTesti\oKehitysTesti\HotelManagementSystem\HotelManagementSystem\obj\Debug\HotelManagementSystem.pdb
+C:\Users\marku\source\oKehitysTesti\oKehitysTesti\HotelManagementSystem\HotelManagementSystem\obj\Debug\HotelManagementSystem.Asiakkaat.resources

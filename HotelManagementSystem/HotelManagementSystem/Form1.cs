@@ -21,5 +21,23 @@ namespace HotelManagementSystem
         {
             Application.Exit();
         }
+
+        private void asiakkaitenHallintaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Asiakkaat asiakkaat = new Asiakkaat();
+            asiakkaat.Show();
+        }
+
+        private void varaustenHallintaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Varaukset varaukset = new Varaukset();
+            varaukset.Show();
+        }
+
+        private void huoneidenHallintaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Huoneet huoneet = new Huoneet();
+            huoneet.Show();
+        }
     }
 }

@@ -54,6 +54,7 @@ namespace HotelManagementSystem
             this.asiakkaitenHallintaToolStripMenuItem.Name = "asiakkaitenHallintaToolStripMenuItem";
             this.asiakkaitenHallintaToolStripMenuItem.Size = new System.Drawing.Size(121, 20);
             this.asiakkaitenHallintaToolStripMenuItem.Text = "Asiakkaiten hallinta";
+            this.asiakkaitenHallintaToolStripMenuItem.Click += new System.EventHandler(this.asiakkaitenHallintaToolStripMenuItem_Click);
             // 
             // varaustenHallintaToolStripMenuItem
             // 
@@ -61,6 +62,7 @@ namespace HotelManagementSystem
             this.varaustenHallintaToolStripMenuItem.Name = "varaustenHallintaToolStripMenuItem";
             this.varaustenHallintaToolStripMenuItem.Size = new System.Drawing.Size(112, 20);
             this.varaustenHallintaToolStripMenuItem.Text = "Varausten hallinta";
+            this.varaustenHallintaToolStripMenuItem.Click += new System.EventHandler(this.varaustenHallintaToolStripMenuItem_Click);
             // 
             // huoneidenHallintaToolStripMenuItem
             // 
@@ -68,6 +70,7 @@ namespace HotelManagementSystem
             this.huoneidenHallintaToolStripMenuItem.Name = "huoneidenHallintaToolStripMenuItem";
             this.huoneidenHallintaToolStripMenuItem.Size = new System.Drawing.Size(120, 20);
             this.huoneidenHallintaToolStripMenuItem.Text = "Huoneiden hallinta";
+            this.huoneidenHallintaToolStripMenuItem.Click += new System.EventHandler(this.huoneidenHallintaToolStripMenuItem_Click);
             // 
             // Paaikkuna
             // 
