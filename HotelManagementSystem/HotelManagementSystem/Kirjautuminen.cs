@@ -22,12 +22,6 @@ namespace HotelManagementSystem
         {
 
         }
-
-        private void label2_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void KirjauduBT_Click(object sender, EventArgs e)
         {
             yhdista tietokantaan = new yhdista();

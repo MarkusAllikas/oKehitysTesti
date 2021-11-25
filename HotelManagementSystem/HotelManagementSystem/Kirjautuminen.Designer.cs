@@ -137,7 +137,6 @@ namespace HotelManagementSystem
             this.KayttajaTunnusLB.Size = new System.Drawing.Size(161, 25);
             this.KayttajaTunnusLB.TabIndex = 0;
             this.KayttajaTunnusLB.Text = "Käyttäjätunnus:";
-            this.KayttajaTunnusLB.Click += new System.EventHandler(this.label2_Click);
             // 
             // Kirjautuminen
             // 
