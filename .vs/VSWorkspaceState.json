@@ -1,7 +1,9 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\HotelManagementSystem",
+    "\\HotelManagementSystem\\HotelManagementSystem"
   ],
-  "SelectedNode": "\\HotelManagementSystem.sln",
+  "SelectedNode": "\\HotelManagementSystem\\HotelManagementSystem\\Form1.cs",
   "PreviewInSolutionExplorer": false
 }
