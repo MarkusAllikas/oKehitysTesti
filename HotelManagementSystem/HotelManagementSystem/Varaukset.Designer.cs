@@ -58,7 +58,7 @@ namespace HotelManagementSystem
             this.panel1.Controls.Add(this.label1);
             this.panel1.Location = new System.Drawing.Point(-4, -2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(808, 79);
+            this.panel1.Size = new System.Drawing.Size(1050, 79);
             this.panel1.TabIndex = 15;
             // 
             // label1
@@ -66,7 +66,7 @@ namespace HotelManagementSystem
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label1.Location = new System.Drawing.Point(254, 21);
+            this.label1.Location = new System.Drawing.Point(368, 25);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(293, 37);
             this.label1.TabIndex = 0;
@@ -75,7 +75,7 @@ namespace HotelManagementSystem
             // 
             // tyhjennaBT
             // 
-            this.tyhjennaBT.Location = new System.Drawing.Point(225, 405);
+            this.tyhjennaBT.Location = new System.Drawing.Point(271, 345);
             this.tyhjennaBT.Name = "tyhjennaBT";
             this.tyhjennaBT.Size = new System.Drawing.Size(75, 23);
             this.tyhjennaBT.TabIndex = 29;
@@ -84,7 +84,7 @@ namespace HotelManagementSystem
             // 
             // poistaBT
             // 
-            this.poistaBT.Location = new System.Drawing.Point(225, 345);
+            this.poistaBT.Location = new System.Drawing.Point(190, 345);
             this.poistaBT.Name = "poistaBT";
             this.poistaBT.Size = new System.Drawing.Size(75, 23);
             this.poistaBT.TabIndex = 28;
@@ -93,21 +93,23 @@ namespace HotelManagementSystem
             // 
             // muokkaaBT
             // 
-            this.muokkaaBT.Location = new System.Drawing.Point(115, 345);
+            this.muokkaaBT.Location = new System.Drawing.Point(109, 345);
             this.muokkaaBT.Name = "muokkaaBT";
             this.muokkaaBT.Size = new System.Drawing.Size(75, 23);
             this.muokkaaBT.TabIndex = 27;
             this.muokkaaBT.Text = "Muokkaa";
             this.muokkaaBT.UseVisualStyleBackColor = true;
+            this.muokkaaBT.Click += new System.EventHandler(this.muokkaaBT_Click);
             // 
             // lisaaBT
             // 
             this.lisaaBT.Location = new System.Drawing.Point(12, 345);
             this.lisaaBT.Name = "lisaaBT";
-            this.lisaaBT.Size = new System.Drawing.Size(75, 23);
+            this.lisaaBT.Size = new System.Drawing.Size(81, 23);
             this.lisaaBT.TabIndex = 26;
-            this.lisaaBT.Text = "Lisää huone";
+            this.lisaaBT.Text = "Lisää varaus";
             this.lisaaBT.UseVisualStyleBackColor = true;
+            this.lisaaBT.Click += new System.EventHandler(this.lisaaBT_Click);
             // 
             // label5
             // 
@@ -123,9 +125,9 @@ namespace HotelManagementSystem
             // huoneetDG
             // 
             this.huoneetDG.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.huoneetDG.Location = new System.Drawing.Point(355, 149);
+            this.huoneetDG.Location = new System.Drawing.Point(371, 149);
             this.huoneetDG.Name = "huoneetDG";
-            this.huoneetDG.Size = new System.Drawing.Size(433, 279);
+            this.huoneetDG.Size = new System.Drawing.Size(660, 279);
             this.huoneetDG.TabIndex = 24;
             // 
             // label3
@@ -230,7 +232,7 @@ namespace HotelManagementSystem
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(1043, 450);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.textBox2);
             this.Controls.Add(this.dateTimePicker2);

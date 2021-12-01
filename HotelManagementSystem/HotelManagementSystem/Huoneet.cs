@@ -16,5 +16,19 @@ namespace HotelManagementSystem
         {
             InitializeComponent();
         }
+
+        private void numeroTB_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        Huone huone = new Huone();
+        private void Huoneet_Load(object sender, EventArgs e)
+        {
+            tyyppiCB.DataSource = Huone.huoneTyypit();
+            tyyppiCB.DisplayMember = "Tyyppi";
+            tyyppiCB.ValueMember = "ID";
+
+        }
     }
 }

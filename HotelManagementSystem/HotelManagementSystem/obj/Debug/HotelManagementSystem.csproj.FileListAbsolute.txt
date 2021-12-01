@@ -111,3 +111,5 @@ C:\Users\Sipsik\source\repos\MarkusAllikas\oKehitysTesti\oKehitysTesti\HotelMana
 C:\Users\Sipsik\source\repos\MarkusAllikas\oKehitysTesti\oKehitysTesti\HotelManagementSystem\HotelManagementSystem\obj\Debug\HotelManagementSystem.exe
 C:\Users\Sipsik\source\repos\MarkusAllikas\oKehitysTesti\oKehitysTesti\HotelManagementSystem\HotelManagementSystem\obj\Debug\HotelManagementSystem.pdb
 C:\Users\Sipsik\source\repos\MarkusAllikas\oKehitysTesti\oKehitysTesti\HotelManagementSystem\HotelManagementSystem\obj\Debug\HotelManagementSystem.Varaukset.resources
+C:\Users\marku\source\oKehitysTesti\oKehitysTesti\HotelManagementSystem\HotelManagementSystem\obj\Debug\HotelManagementSystem.Huoneet.resources
+C:\Users\marku\source\oKehitysTesti\oKehitysTesti\HotelManagementSystem\HotelManagementSystem\obj\Debug\HotelManagementSystem.Varaukset.resources

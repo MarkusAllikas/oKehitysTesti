@@ -41,5 +41,15 @@ namespace HotelManagementSystem
         {
 
         }
+
+        private void muokkaaBT_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lisaaBT_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

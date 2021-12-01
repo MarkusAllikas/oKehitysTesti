@@ -75,6 +75,7 @@ namespace HotelManagementSystem
             this.numeroTB.Name = "numeroTB";
             this.numeroTB.Size = new System.Drawing.Size(147, 20);
             this.numeroTB.TabIndex = 1;
+            this.numeroTB.TextChanged += new System.EventHandler(this.numeroTB_TextChanged);
             // 
             // puhelinTB
             // 
@@ -221,6 +222,7 @@ namespace HotelManagementSystem
             this.Controls.Add(this.panel1);
             this.Name = "Huoneet";
             this.Text = "Huoneet";
+            this.Load += new System.EventHandler(this.Huoneet_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.huoneetDG)).EndInit();
