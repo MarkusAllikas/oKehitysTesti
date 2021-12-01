@@ -12,44 +12,36 @@ namespace HotelManagementSystem
 {
     public partial class Varaukset : Form
     {
+        varaus varaukset = new varaus();
         public Varaukset()
         {
             InitializeComponent();
         }
 
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label6_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBox1_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label5_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label7_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void muokkaaBT_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void lisaaBT_Click(object sender, EventArgs e)
         {
+            // lisataan uusi asiakas tietokantaan jos virheitä syöttökentissä ei ilmene
+            int asiakas = Convert.ToInt32(asiakasCB.SelectedValue.ToString());
+            int huonenro = Convert.ToInt32(hnroCB.SelectedValue.ToString());
+            DateTime sisaankirjauduttu = Convert.ToDateTime(sisaanDT.Value);
+            DateTime uloskirjauduttu = Convert.ToDateTime(sisaanDT.Value);
 
+            if (varaukset.lisaaVaraus(huonenro, asiakas, sisaankirjauduttu, uloskirjauduttu))
+            {
+                MessageBox.Show("Lisätty", "Uusi varaus", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            else
+            {
+                MessageBox.Show("Lisäys ei onnistunut", "Uusi varaus", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
+            varauksetDG.DataSource = varaukset.haeVaraukset();
+        }
+
+        private void Varaukset_Load(object sender, EventArgs e)
+        {
+            // tuodaan varaukset ikkunan ladattua
+            varauksetDG.DataSource = varaukset.haeVaraukset();
         }
     }
 }

@@ -36,20 +36,20 @@ namespace HotelManagementSystem
             this.muokkaaBT = new System.Windows.Forms.Button();
             this.lisaaBT = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
-            this.huoneetDG = new System.Windows.Forms.DataGridView();
+            this.varauksetDG = new System.Windows.Forms.DataGridView();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.tyyppiCB = new System.Windows.Forms.ComboBox();
             this.label6 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
+            this.vidTB = new System.Windows.Forms.TextBox();
+            this.hnroCB = new System.Windows.Forms.ComboBox();
+            this.sisaanDT = new System.Windows.Forms.DateTimePicker();
+            this.ulosDT = new System.Windows.Forms.DateTimePicker();
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.asiakasCB = new System.Windows.Forms.ComboBox();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.huoneetDG)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.varauksetDG)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -71,7 +71,6 @@ namespace HotelManagementSystem
             this.label1.Size = new System.Drawing.Size(293, 37);
             this.label1.TabIndex = 0;
             this.label1.Text = "Varausten hallinta";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // tyhjennaBT
             // 
@@ -99,7 +98,6 @@ namespace HotelManagementSystem
             this.muokkaaBT.TabIndex = 27;
             this.muokkaaBT.Text = "Muokkaa";
             this.muokkaaBT.UseVisualStyleBackColor = true;
-            this.muokkaaBT.Click += new System.EventHandler(this.muokkaaBT_Click);
             // 
             // lisaaBT
             // 
@@ -120,15 +118,14 @@ namespace HotelManagementSystem
             this.label5.Size = new System.Drawing.Size(56, 18);
             this.label5.TabIndex = 25;
             this.label5.Text = "Alkaen:";
-            this.label5.Click += new System.EventHandler(this.label5_Click);
             // 
-            // huoneetDG
+            // varauksetDG
             // 
-            this.huoneetDG.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.huoneetDG.Location = new System.Drawing.Point(371, 149);
-            this.huoneetDG.Name = "huoneetDG";
-            this.huoneetDG.Size = new System.Drawing.Size(660, 279);
-            this.huoneetDG.TabIndex = 24;
+            this.varauksetDG.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.varauksetDG.Location = new System.Drawing.Point(371, 149);
+            this.varauksetDG.Name = "varauksetDG";
+            this.varauksetDG.Size = new System.Drawing.Size(660, 279);
+            this.varauksetDG.TabIndex = 24;
             // 
             // label3
             // 
@@ -168,37 +165,35 @@ namespace HotelManagementSystem
             this.label6.Size = new System.Drawing.Size(100, 18);
             this.label6.TabIndex = 31;
             this.label6.Text = "Varauksen ID:";
-            this.label6.Click += new System.EventHandler(this.label6_Click);
             // 
-            // textBox1
+            // vidTB
             // 
-            this.textBox1.Location = new System.Drawing.Point(173, 175);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(173, 20);
-            this.textBox1.TabIndex = 30;
-            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
+            this.vidTB.Location = new System.Drawing.Point(173, 175);
+            this.vidTB.Name = "vidTB";
+            this.vidTB.Size = new System.Drawing.Size(173, 20);
+            this.vidTB.TabIndex = 30;
             // 
-            // comboBox1
+            // hnroCB
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(173, 228);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(173, 21);
-            this.comboBox1.TabIndex = 32;
+            this.hnroCB.FormattingEnabled = true;
+            this.hnroCB.Location = new System.Drawing.Point(173, 228);
+            this.hnroCB.Name = "hnroCB";
+            this.hnroCB.Size = new System.Drawing.Size(173, 21);
+            this.hnroCB.TabIndex = 32;
             // 
-            // dateTimePicker1
+            // sisaanDT
             // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(173, 255);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(173, 20);
-            this.dateTimePicker1.TabIndex = 33;
+            this.sisaanDT.Location = new System.Drawing.Point(173, 255);
+            this.sisaanDT.Name = "sisaanDT";
+            this.sisaanDT.Size = new System.Drawing.Size(173, 20);
+            this.sisaanDT.TabIndex = 33;
             // 
-            // dateTimePicker2
+            // ulosDT
             // 
-            this.dateTimePicker2.Location = new System.Drawing.Point(173, 281);
-            this.dateTimePicker2.Name = "dateTimePicker2";
-            this.dateTimePicker2.Size = new System.Drawing.Size(173, 20);
-            this.dateTimePicker2.TabIndex = 35;
+            this.ulosDT.Location = new System.Drawing.Point(173, 281);
+            this.ulosDT.Name = "ulosDT";
+            this.ulosDT.Size = new System.Drawing.Size(173, 20);
+            this.ulosDT.TabIndex = 35;
             // 
             // label7
             // 
@@ -209,7 +204,6 @@ namespace HotelManagementSystem
             this.label7.Size = new System.Drawing.Size(69, 18);
             this.label7.TabIndex = 34;
             this.label7.Text = "Loppuen:";
-            this.label7.Click += new System.EventHandler(this.label7_Click);
             // 
             // label8
             // 
@@ -221,41 +215,43 @@ namespace HotelManagementSystem
             this.label8.TabIndex = 37;
             this.label8.Text = "Asiakkaan ID:";
             // 
-            // textBox2
+            // asiakasCB
             // 
-            this.textBox2.Location = new System.Drawing.Point(173, 149);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(173, 20);
-            this.textBox2.TabIndex = 36;
+            this.asiakasCB.FormattingEnabled = true;
+            this.asiakasCB.Location = new System.Drawing.Point(173, 149);
+            this.asiakasCB.Name = "asiakasCB";
+            this.asiakasCB.Size = new System.Drawing.Size(173, 21);
+            this.asiakasCB.TabIndex = 38;
             // 
             // Varaukset
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1043, 450);
+            this.Controls.Add(this.asiakasCB);
             this.Controls.Add(this.label8);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.dateTimePicker2);
+            this.Controls.Add(this.ulosDT);
             this.Controls.Add(this.label7);
-            this.Controls.Add(this.dateTimePicker1);
-            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.sisaanDT);
+            this.Controls.Add(this.hnroCB);
             this.Controls.Add(this.label6);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.vidTB);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.tyhjennaBT);
             this.Controls.Add(this.poistaBT);
             this.Controls.Add(this.muokkaaBT);
             this.Controls.Add(this.lisaaBT);
             this.Controls.Add(this.label5);
-            this.Controls.Add(this.huoneetDG);
+            this.Controls.Add(this.varauksetDG);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.tyyppiCB);
             this.Name = "Varaukset";
             this.Text = "Varaukset";
+            this.Load += new System.EventHandler(this.Varaukset_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.huoneetDG)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.varauksetDG)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -270,17 +266,17 @@ namespace HotelManagementSystem
         private System.Windows.Forms.Button muokkaaBT;
         private System.Windows.Forms.Button lisaaBT;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.DataGridView huoneetDG;
+        private System.Windows.Forms.DataGridView varauksetDG;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.ComboBox tyyppiCB;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
-        private System.Windows.Forms.DateTimePicker dateTimePicker2;
+        private System.Windows.Forms.TextBox vidTB;
+        private System.Windows.Forms.ComboBox hnroCB;
+        private System.Windows.Forms.DateTimePicker sisaanDT;
+        private System.Windows.Forms.DateTimePicker ulosDT;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.ComboBox asiakasCB;
     }
 }

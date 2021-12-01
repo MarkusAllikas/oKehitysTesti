@@ -171,6 +171,7 @@ namespace HotelManagementSystem
             this.lisaaBT.TabIndex = 11;
             this.lisaaBT.Text = "Lisää huone";
             this.lisaaBT.UseVisualStyleBackColor = true;
+            this.lisaaBT.Click += new System.EventHandler(this.lisaaBT_Click);
             // 
             // muokkaaBT
             // 
