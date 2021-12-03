@@ -19,7 +19,7 @@ namespace HotelManagementSystem
                 InitializeComponent();
             }
 
-            HUONE huone = new HUONE();
+            Huone huone = new Huone();
             private void Huoneet_Load(object sender, EventArgs e)
             {
             taulukkoDG.DataSource = huone.haeHuoneet();

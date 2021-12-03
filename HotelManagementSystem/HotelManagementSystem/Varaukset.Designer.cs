@@ -222,6 +222,7 @@ namespace HotelManagementSystem
             this.asiakasCB.Name = "asiakasCB";
             this.asiakasCB.Size = new System.Drawing.Size(173, 21);
             this.asiakasCB.TabIndex = 38;
+            this.asiakasCB.SelectedIndexChanged += new System.EventHandler(this.asiakasCB_SelectedIndexChanged);
             // 
             // Varaukset
             // 

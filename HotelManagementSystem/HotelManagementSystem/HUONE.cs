@@ -9,99 +9,97 @@ using System.Windows.Forms;
 
 namespace HotelManagementSystem
 {
-    class HUONE
+    // Tällä luokalla hallitaan huoneita
+      
+    class Huone
     {
         yhdista yhteys = new yhdista();
 
-        public bool lisaaHuone(string numero, string tyyppi, string puhelin, String vapaa)
+        //funktio jolla saa listan huonetyypeistä
+        public DataTable huoneTyypit()
+        {
+            MySqlCommand komento = new MySqlCommand("SELECT `ID`, `Tyyppi`, `Hinta` FROM `huone_tyypit`", yhteys.OtaYhteys());
+            MySqlDataAdapter adapteri = new MySqlDataAdapter();
+            DataTable table = new DataTable();
+
+            adapteri.SelectCommand = komento;
+            adapteri.Fill(table);
+
+            return table;
+        }
+
+        // lisaa uusi huone -funktio
+        public bool lisaaHuone(int hnro, int htyyppi, String puh, String vapaa)
         {
             MySqlCommand komento = new MySqlCommand();
-            String lisayskysely = "INSERT INTO huoneet (numero, tyyppi, puhelin, vapaa) VALUES (@nro,@tpi,@puh,@vpa);";
-
+            String lisayskysely = "INSERT INTO huoneet (huoneNro, huonetyyppi, puhelin, vapaa) VALUES (@hno, @hty, @puh, @vap) ";
             komento.CommandText = lisayskysely;
             komento.Connection = yhteys.OtaYhteys();
 
-            komento.Parameters.Add("@nro", MySqlDbType.VarChar).Value = numero;
-            komento.Parameters.Add("@tpi", MySqlDbType.VarChar).Value = tyyppi;
-            komento.Parameters.Add("@puh", MySqlDbType.VarChar).Value = puhelin;
-            komento.Parameters.Add("@vpa", MySqlDbType.VarChar).Value = vapaa;
+            komento.Parameters.Add("@hno", MySqlDbType.Int32).Value = hnro;
+            komento.Parameters.Add("@hty", MySqlDbType.Int32).Value = htyyppi;
+            komento.Parameters.Add("@puh", MySqlDbType.VarChar).Value = puh;
+            komento.Parameters.Add("@vap", MySqlDbType.VarChar).Value = vapaa;
 
             yhteys.avaaYhteys();
+
             try
             {
-                komento.ExecuteNonQuery();
-                MessageBox.Show("Huone lisätty", "Huone lisätty", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                yhteys.suljeYhteys();
-                return true;
+                if(komento.ExecuteNonQuery() == 1)
+                {
+                    yhteys.suljeYhteys();
+                    return true;
+                }
+                else
+                {
+                    yhteys.suljeYhteys();
+                    return false;
+                }
             }
-            catch (Exception e)
+            catch(Exception e)
             {
-                MessageBox.Show("Virhe huoneen lisäyksessä", "Virhe", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Virhe" + e);
                 return false;
             }
         }
+
         public DataTable haeHuoneet()
         {
-            MySqlCommand komento = new MySqlCommand("SELECT id, numero, tyyppi, puhelin, vapaa FROM huoneet", yhteys.OtaYhteys());
+            MySqlCommand komento = new MySqlCommand("SELECT * FROM huoneet", yhteys.OtaYhteys());
             MySqlDataAdapter adapteri = new MySqlDataAdapter();
             DataTable taulu = new DataTable();
 
             adapteri.SelectCommand = komento;
             adapteri.Fill(taulu);
-
             return taulu;
         }
-        public bool muokkaaHuonetta(int id, String numero, String tyyppi, String puhelin, String vapaa)
+
+
+        public bool muokkaaHuonetta(int hnro, int htyyppi, String puh, String vapaa)
         {
             MySqlCommand komento = new MySqlCommand();
-            String paivityskysely = "UPDATE `huoneet` SET `numero` = @nro, `tyyppi` = @tpi, `puhelin` = @puh, `vapaa` = @vpa WHERE ID = @id";
-
+            String paivityskysely = "UPDATE `huoneet` SET `HuoneenID`='@hno',`Huonetyyppi`='@hty',`puhelin`='@puh',`vapaa`='@vap' WHERE `puhelin` = @puh";
             komento.CommandText = paivityskysely;
             komento.Connection = yhteys.OtaYhteys();
 
-            komento.Parameters.Add("@id", MySqlDbType.UInt32).Value = id;
-            komento.Parameters.Add("@nro", MySqlDbType.VarChar).Value = numero;
-            komento.Parameters.Add("@tpi", MySqlDbType.VarChar).Value = tyyppi;
-            komento.Parameters.Add("@puh", MySqlDbType.VarChar).Value = puhelin;
-            komento.Parameters.Add("@vpa", MySqlDbType.VarChar).Value = vapaa;
+            komento.Parameters.Add("@hno", MySqlDbType.Int32).Value = hnro;
+            komento.Parameters.Add("@hty", MySqlDbType.Int32).Value = htyyppi;
+            komento.Parameters.Add("@puh", MySqlDbType.VarChar).Value = puh;
+            komento.Parameters.Add("@vap", MySqlDbType.VarChar).Value = vapaa;
 
             yhteys.avaaYhteys();
-            try
+            if (komento.ExecuteNonQuery() == 1)
             {
-                komento.ExecuteNonQuery();
-                MessageBox.Show("Huone muokattu", "Huoneen muokkaaminen", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 yhteys.suljeYhteys();
                 return true;
             }
-            catch (Exception e)
+            else
             {
-                MessageBox.Show("Huoneen muokkaaminen epäonnistui", "Huoneen muokkaaminen", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return false;
-            }
-        }
-        public bool poistaHuone(int id)
-        {
-            MySqlCommand komento = new MySqlCommand();
-            String poistokysely = "DELETE from huoneet WHERE id = @id";
-            komento.CommandText = poistokysely;
-            komento.Connection = yhteys.OtaYhteys();
-
-            komento.Parameters.Add("@id", MySqlDbType.VarChar).Value = id;
-
-            yhteys.avaaYhteys();
-            try
-            {
-                komento.ExecuteNonQuery();
-                MessageBox.Show("Huone poistettu", "Poistaminen", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 yhteys.suljeYhteys();
-                return true;
-            }
-            catch (Exception e)
-            {
-                MessageBox.Show("Huonetta ei löydy", "Poistaminen", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 return false;
             }
         }
+
+
     }
- }
-
+}

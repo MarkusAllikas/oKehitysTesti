@@ -43,5 +43,10 @@ namespace HotelManagementSystem
             // tuodaan varaukset ikkunan ladattua
             varauksetDG.DataSource = varaukset.haeVaraukset();
         }
+
+        private void asiakasCB_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
