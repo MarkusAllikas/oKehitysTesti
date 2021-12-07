@@ -22,55 +22,95 @@ namespace HotelManagementSystem
             Huone huone = new Huone();
             private void Huoneet_Load(object sender, EventArgs e)
             {
-            taulukkoDG.DataSource = huone.haeHuoneet();
-            }
-
-            private void panel1_Paint(object sender, PaintEventArgs e)
-            {
-
-            }
-
-            private void label1_Click(object sender, EventArgs e)
-            {
-
-            }
+            huoneetDG.DataSource = huone.haeHuoneet();
+            tyyppiCB.DataSource = huone.huoneTyypit();
+            tyyppiCB.DisplayMember = "Tyyppi";
+            tyyppiCB.ValueMember = "ID";
+        }
 
         private void lisaaBT_Click(object sender, EventArgs e)
         {
-            huone.lisaaHuone(numeroTB.Text, comboBox1.Text, puhelinTB.Text, comboBox2.Text);
-            taulukkoDG.DataSource = huone.haeHuoneet();
+            int huonenro = Convert.ToInt32(numeroTB.Text.ToString());
+            int huonetyyppi = Convert.ToInt32(tyyppiCB.SelectedValue.ToString());
+            String puhelin = puhelinTB.Text;
+
+            if (huone.lisaaHuone(huonenro, huonetyyppi, puhelin, "Kyllä"))
+            {
+                MessageBox.Show("huone lisätty", "Huoneen lisääminen", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            else
+            {
+                MessageBox.Show("Huoneen lisääminen epäonnistui", "Huoneen lisääminen", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+
+            huoneetDG.DataSource = huone.haeHuoneet();
         }
 
         private void tyhjennaBT_Click(object sender, EventArgs e)
         {
-            idTB.Text = "";
             numeroTB.Text = "";
-            comboBox1.SelectedIndex = 0;
+            tyyppiCB.SelectedIndex = 0;
             puhelinTB.Text = "";
-            comboBox2.SelectedIndex = 0;
-        }
-
-        private void label7_Click(object sender, EventArgs e)
-        {
-
+            kyllaRB.Checked = false;
+            eiRB.Checked = false;
         }
 
         private void poistaBT_Click(object sender, EventArgs e)
         {
-            if (huone.poistaHuone(int.Parse(idTB.Text)))
+            try
             {
-                taulukkoDG.DataSource = huone.haeHuoneet();
+                int numero = Convert.ToInt32(numeroTB.Text);
+
+                if (huone.poistaHuone(numero))
+                {
+                    MessageBox.Show("Huone poistettu", "Poistaminen", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    huoneetDG.DataSource = huone.haeHuoneet();
+                }
+                else
+                {
+                    MessageBox.Show("Huonetta ei löydy", "Poistaminen", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                tyhjennaBT.PerformClick();
             }
-            else
+            catch(Exception ex)
             {
-                MessageBox.Show("Asiakasta ei löydy", "Poistaminen", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Virhe " + ex.Message, "Poistaminen", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
         private void muokkaaBT_Click(object sender, EventArgs e)
         {
-            huone.muokkaaHuonetta(int.Parse(idTB.Text), numeroTB.Text, comboBox1.Text, puhelinTB.Text, comboBox2.Text);
-            taulukkoDG.DataSource = huone.haeHuoneet();
+            string vapaa = "";
+            string puhelin = puhelinTB.Text;
+            int tyyppi = Convert.ToInt32(tyyppiCB.SelectedValue.ToString());
+
+            try
+            {
+                int numero = Convert.ToInt32(numeroTB.Text);
+
+                if (kyllaRB.Checked)
+                {
+                    vapaa = "Kyllä";
+                }
+                else
+                {
+                    vapaa = "Ei";
+                }
+
+                if (huone.muokkaaHuonetta(numero, tyyppi, puhelin, vapaa))
+                {
+                    MessageBox.Show("Huone muokattu", "Huoneen muokkaus", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    huoneetDG.DataSource = huone.haeHuoneet();
+                }
+                else
+                {
+                    MessageBox.Show("Muokkaus epäonnistui", "Huoneen muokkaus", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show("Virhe " + ex.Message, "Huoneen muokkaaminen", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void taulukkoDG_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -80,16 +120,10 @@ namespace HotelManagementSystem
 
         private void taulukkoDG_CellClick_1(object sender, DataGridViewCellEventArgs e)
         {
-            idTB.Text = taulukkoDG.CurrentRow.Cells[0].Value.ToString();
-            numeroTB.Text = taulukkoDG.CurrentRow.Cells[1].Value.ToString();
-            comboBox1.Text = taulukkoDG.CurrentRow.Cells[2].Value.ToString();
-            puhelinTB.Text = taulukkoDG.CurrentRow.Cells[3].Value.ToString();
-        }
-
-        private void label5_Click(object sender, EventArgs e)
-        {
-
+            numeroTB.Text = huoneetDG.CurrentRow.Cells[0].Value.ToString();
+            tyyppiCB.Text = huoneetDG.CurrentRow.Cells[1].Value.ToString();
+            puhelinTB.Text = huoneetDG.CurrentRow.Cells[2].Value.ToString();
         }
     }
-    }
+}
 
