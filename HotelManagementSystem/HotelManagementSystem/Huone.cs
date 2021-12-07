@@ -74,5 +74,34 @@ namespace HotelManagementSystem
             return taulu;
         }
 
+
+        public bool muokkaaHuonetta(int hnro, int htyyppi, String puh, String vapaa)
+        {
+            MySqlCommand komento = new MySqlCommand();
+            String paivityskysely = "UPDATE `huoneet` SET `HuoneenID`='@hno',`Huonetyyppi`='@hty',`puhelin`='@puh',`vapaa`='@vap' WHERE `puhelin` = @puh";
+            komento.CommandText = paivityskysely;
+            komento.Connection = yhteys.OtaYhteys();
+
+            komento.Parameters.Add("@hno", MySqlDbType.Int32).Value = hnro;
+            komento.Parameters.Add("@hty", MySqlDbType.Int32).Value = htyyppi;
+            komento.Parameters.Add("@puh", MySqlDbType.VarChar).Value = puh;
+            komento.Parameters.Add("@vap", MySqlDbType.VarChar).Value = vapaa;
+
+            yhteys.avaaYhteys();
+            if (komento.ExecuteNonQuery() == 1)
+            {
+                yhteys.suljeYhteys();
+                return true;
+            }
+            else
+            {
+                yhteys.suljeYhteys();
+                return false;
+            }
+        }
+
+
     }
 }
+
+
