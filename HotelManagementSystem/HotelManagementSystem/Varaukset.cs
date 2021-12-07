@@ -7,11 +7,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using MySql.Data.MySqlClient;
 
 namespace HotelManagementSystem
 {
     public partial class Varaukset : Form
     {
+
         varaus varaukset = new varaus();
         public Varaukset()
         {
@@ -46,6 +48,21 @@ namespace HotelManagementSystem
 
         private void asiakasCB_SelectedIndexChanged(object sender, EventArgs e)
         {
+
+        }
+
+
+        // Näyttää kaikki varaukset
+        public DataTable kaikkiVaraukset()
+        {
+            MySqlCommand komento = new MySqlCommand("SELECT `VarausID`, `HuoneenNro`, `AsiakkaanID`, `AlkaenPVM`, `LoppuenPVM` FROM `varaukset`", yhteys.OtaYhteys());
+            MySqlDataAdapter adapteri = new MySqlDataAdapter();
+            DataTable table = new DataTable();
+
+            adapteri.SelectCommand = komento;
+            adapteri.Fill(table);
+
+            return table;
 
         }
     }
