@@ -53,6 +53,8 @@ namespace HotelManagementSystem
 
 
         // Näyttää kaikki varaukset
+        /* errori jostain syystä yhteys.otayhteys takia
+         * 
         public DataTable kaikkiVaraukset()
         {
             MySqlCommand komento = new MySqlCommand("SELECT `VarausID`, `HuoneenNro`, `AsiakkaanID`, `AlkaenPVM`, `LoppuenPVM` FROM `varaukset`", yhteys.OtaYhteys());
@@ -64,6 +66,6 @@ namespace HotelManagementSystem
 
             return table;
 
-        }
+        }*/
     }
 }
