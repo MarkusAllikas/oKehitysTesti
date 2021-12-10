@@ -39,7 +39,7 @@ namespace HotelManagementSystem
         public bool lisaaVaraus(int hnro, int anro, DateTime sisaan, DateTime ulos)
         {
             MySqlCommand komento = new MySqlCommand();
-            String lisayskysely = "INSERT INTO `varaukset` (huoneNro, asiakasID, sisaan, ulos) VALUES (@hno, @ano, @sis, @ulo)";
+            String lisayskysely = "INSERT INTO `varaukset` (HuoneenNro, AsiakkaanID, alkaenPVM, LoppuenPVM) VALUES (@hno, @ano, @sis, @ulo)";
             komento.CommandText = lisayskysely;
             komento.Connection = yhteys.OtaYhteys();
 
@@ -70,10 +70,10 @@ namespace HotelManagementSystem
             }
         }
 
-        public bool poistaVaraus(String varausid)
+        public bool poistaVaraus(int varausid)
         {
             MySqlCommand komento = new MySqlCommand();
-            String poistokysely = "DELETE FROM varaukset WHERE varausID = @vid";
+            String poistokysely = "DELETE FROM varaukset WHERE VarausID = @vid";
             komento.CommandText = poistokysely;
             komento.Connection = yhteys.OtaYhteys();
 
@@ -90,6 +90,19 @@ namespace HotelManagementSystem
                 yhteys.suljeYhteys();
                 return false;
             }
+        }
+
+        public DataTable kaikkiVaraukset()
+        {
+            MySqlCommand komento = new MySqlCommand("SELECT `VarausID`, `HuoneenNro`, `AsiakkaanID`, `AlkaenPVM`, `LoppuenPVM` FROM `varaukset`", yhteys.OtaYhteys());
+            MySqlDataAdapter adapteri = new MySqlDataAdapter();
+            DataTable table = new DataTable();
+
+            adapteri.SelectCommand = komento;
+            adapteri.Fill(table);
+
+            return table;
+
         }
     }
 }

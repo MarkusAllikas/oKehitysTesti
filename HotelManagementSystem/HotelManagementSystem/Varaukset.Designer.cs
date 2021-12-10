@@ -80,6 +80,7 @@ namespace HotelManagementSystem
             this.tyhjennaBT.TabIndex = 29;
             this.tyhjennaBT.Text = "Tyhjennä";
             this.tyhjennaBT.UseVisualStyleBackColor = true;
+            this.tyhjennaBT.Click += new System.EventHandler(this.tyhjennaBT_Click);
             // 
             // poistaBT
             // 
@@ -89,6 +90,7 @@ namespace HotelManagementSystem
             this.poistaBT.TabIndex = 28;
             this.poistaBT.Text = "Poista";
             this.poistaBT.UseVisualStyleBackColor = true;
+            this.poistaBT.Click += new System.EventHandler(this.poistaBT_Click);
             // 
             // muokkaaBT
             // 
@@ -113,7 +115,7 @@ namespace HotelManagementSystem
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(112, 257);
+            this.label5.Location = new System.Drawing.Point(104, 257);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(56, 18);
             this.label5.TabIndex = 25;
@@ -126,12 +128,13 @@ namespace HotelManagementSystem
             this.varauksetDG.Name = "varauksetDG";
             this.varauksetDG.Size = new System.Drawing.Size(660, 279);
             this.varauksetDG.TabIndex = 24;
+            this.varauksetDG.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.varauksetDG_CellClick);
             // 
             // label3
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(72, 200);
+            this.label3.Location = new System.Drawing.Point(67, 200);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(93, 18);
             this.label3.TabIndex = 22;
@@ -141,7 +144,7 @@ namespace HotelManagementSystem
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(67, 227);
+            this.label2.Location = new System.Drawing.Point(62, 227);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(98, 18);
             this.label2.TabIndex = 21;
@@ -155,12 +158,13 @@ namespace HotelManagementSystem
             this.tyyppiCB.Name = "tyyppiCB";
             this.tyyppiCB.Size = new System.Drawing.Size(173, 21);
             this.tyyppiCB.TabIndex = 18;
+            this.tyyppiCB.SelectedIndexChanged += new System.EventHandler(this.tyyppiCB_SelectedIndexChanged);
             // 
             // label6
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(62, 174);
+            this.label6.Location = new System.Drawing.Point(60, 174);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(100, 18);
             this.label6.TabIndex = 31;
@@ -199,7 +203,7 @@ namespace HotelManagementSystem
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(96, 283);
+            this.label7.Location = new System.Drawing.Point(91, 283);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(69, 18);
             this.label7.TabIndex = 34;
@@ -209,11 +213,11 @@ namespace HotelManagementSystem
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(62, 148);
+            this.label8.Location = new System.Drawing.Point(96, 148);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(98, 18);
+            this.label8.Size = new System.Drawing.Size(64, 18);
             this.label8.TabIndex = 37;
-            this.label8.Text = "Asiakkaan ID:";
+            this.label8.Text = "Asiakas:";
             // 
             // asiakasCB
             // 

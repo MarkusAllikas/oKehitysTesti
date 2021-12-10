@@ -28,6 +28,23 @@ namespace HotelManagementSystem
             return table;
         }
 
+        public DataTable tyypillisetHuoneet(int htyyppi)
+        {
+            MySqlCommand komento = new MySqlCommand();
+            String lisayskysely = "SELECT * from huoneet WHERE huonetyyppi = @hty";
+            komento.CommandText = lisayskysely;
+            komento.Connection = yhteys.OtaYhteys();
+            komento.Parameters.Add("@hty", MySqlDbType.Int32).Value = htyyppi;
+
+            MySqlDataAdapter adapteri = new MySqlDataAdapter();
+            DataTable table = new DataTable();
+
+            adapteri.SelectCommand = komento;
+            adapteri.Fill(table);
+
+            return table;
+        }
+
         // lisaa uusi huone -funktio
         public bool lisaaHuone(int hnro, int htyyppi, String puh, String vapaa)
         {
@@ -58,7 +75,7 @@ namespace HotelManagementSystem
             }
             catch(Exception e)
             {
-                MessageBox.Show("Virhe" + e);
+                MessageBox.Show("Virhe" + e.Message);
                 return false;
             }
         }
@@ -78,7 +95,7 @@ namespace HotelManagementSystem
         public bool muokkaaHuonetta(int hnro, int htyyppi, String puh, String vapaa)
         {
             MySqlCommand komento = new MySqlCommand();
-            String paivityskysely = "UPDATE `huoneet` SET `HuoneenID`='@hno',`Huonetyyppi`='@hty',`puhelin`='@puh',`vapaa`='@vap' WHERE `puhelin` = @puh";
+            String paivityskysely = "UPDATE `huoneet` SET `huonetyyppi` = @hty, `puhelin` = @puh, `vapaa` = @vap WHERE huoneNro = @hno";
             komento.CommandText = paivityskysely;
             komento.Connection = yhteys.OtaYhteys();
 
@@ -100,6 +117,27 @@ namespace HotelManagementSystem
             }
         }
 
+        public bool poistaHuone(int huonenumero)
+        {
+            MySqlCommand komento = new MySqlCommand();
+            String poistokysely = "DELETE from huoneet WHERE huoneNro = @hno";
+            komento.CommandText = poistokysely;
+            komento.Connection = yhteys.OtaYhteys();
 
+            komento.Parameters.Add("@hno", MySqlDbType.VarChar).Value = huonenumero;
+
+            yhteys.avaaYhteys();
+
+            if (komento.ExecuteNonQuery() == 1)
+            {
+                yhteys.suljeYhteys();
+                return true;
+            }
+            else
+            {
+                yhteys.suljeYhteys();
+                return false;
+            }
+        }
     }
 }

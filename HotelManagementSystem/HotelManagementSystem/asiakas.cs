@@ -44,8 +44,10 @@ namespace HotelManagementSystem
             {
                 komento.Parameters.Add("@ssa", MySqlDbType.VarChar).Value = "xcxcRT6!@";
             }
-            
-        yhteys.avaaYhteys();
+
+      
+
+            yhteys.avaaYhteys();
 
             //testaa onko true ilman että ohjelma kaatuu
             try
@@ -60,6 +62,22 @@ namespace HotelManagementSystem
                 MessageBox.Show("Käyttäjätunnus käytössä", "Virhe", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return false;
             }
+        }
+
+
+        // HUOM! lisäsin omaan asiakka<t tietokantaan asiakasID tablen ja siihen Auto increment,
+        // jotta varaustenhallinnassa asiakkaita ja varauksia voi hallita ID:n avulla.
+
+        public DataTable asiakaslista()
+        {
+            MySqlCommand komento = new MySqlCommand("SELECT `asiakasID`, `kayttajatunnus` FROM `asiakkaat`", yhteys.OtaYhteys());
+            MySqlDataAdapter adapteri = new MySqlDataAdapter();
+            DataTable table = new DataTable();
+
+            adapteri.SelectCommand = komento;
+            adapteri.Fill(table);
+
+            return table;
         }
 
         public DataTable haeAsiakkaat()
