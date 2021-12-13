@@ -100,6 +100,7 @@ namespace HotelManagementSystem
             this.muokkaaBT.TabIndex = 27;
             this.muokkaaBT.Text = "Muokkaa";
             this.muokkaaBT.UseVisualStyleBackColor = true;
+            this.muokkaaBT.Click += new System.EventHandler(this.muokkaaBT_Click);
             // 
             // lisaaBT
             // 

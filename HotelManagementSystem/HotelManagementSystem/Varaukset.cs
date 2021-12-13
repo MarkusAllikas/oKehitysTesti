@@ -114,5 +114,18 @@ namespace HotelManagementSystem
             sisaanDT.Value = DateTime.Now;
             ulosDT.Value = DateTime.Now;
         }
+
+        private void muokkaaBT_Click(object sender, EventArgs e)
+        {
+
+            //Muokkaa varausta
+            int varausID = Convert.ToInt32(vidTB.Text);
+            int asiakasID = Convert.ToInt32(asiakasCB.Text);
+            int huoneNro = Convert.ToInt32(hnroCB.Text);
+            //DateTime alkaenPVM = Convert.ToDateTime(sisaanDT.DateTime);
+            //DateTime loppuenPVM = Convert.ToDateTime(ulosDT.DateTime);
+            // kesken
+
+        }
     }
 }
