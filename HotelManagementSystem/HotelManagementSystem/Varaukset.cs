@@ -53,7 +53,7 @@ namespace HotelManagementSystem
             tyyppiCB.DisplayMember = "Tyyppi";
             tyyppiCB.ValueMember = "ID";
 
-            //tuodaan asiakkaas comboboxiin pudotusvalikkoon
+            //tuodaan asiakas comboboxiin pudotusvalikkoon
             asiakasCB.DataSource = Asiakkaat.asiakaslista();
             asiakasCB.DisplayMember = "kayttajatunnus";
             asiakasCB.ValueMember = "asiakasID";
@@ -97,6 +97,7 @@ namespace HotelManagementSystem
             }
         }
 
+        //täytyy syöttäkentät valituilla tiedoilla
         private void varauksetDG_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             vidTB.Text = varauksetDG.CurrentRow.Cells[0].Value.ToString();
@@ -104,6 +105,7 @@ namespace HotelManagementSystem
             asiakasCB.SelectedValue = varauksetDG.CurrentRow.Cells[2].Value.ToString();
             sisaanDT.Value = Convert.ToDateTime(varauksetDG.CurrentRow.Cells[3].Value);
             ulosDT.Value = Convert.ToDateTime(varauksetDG.CurrentRow.Cells[4].Value);
+            asiakasIDTB.Text = varauksetDG.CurrentRow.Cells[2].Value.ToString();
         }
 
         private void tyhjennaBT_Click(object sender, EventArgs e)
@@ -120,11 +122,27 @@ namespace HotelManagementSystem
 
             //Muokkaa varausta
             int varausID = Convert.ToInt32(vidTB.Text);
-            int asiakasID = Convert.ToInt32(asiakasCB.Text);
+            int asiakasID = Convert.ToInt32(asiakasIDTB.Text.ToString());
             int huoneNro = Convert.ToInt32(hnroCB.Text);
-            //DateTime alkaenPVM = Convert.ToDateTime(sisaanDT.DateTime);
-            //DateTime loppuenPVM = Convert.ToDateTime(ulosDT.DateTime);
-            // kesken
+            DateTime alkaenPVM = Convert.ToDateTime(sisaanDT.Value);
+            DateTime loppuenPVM = Convert.ToDateTime(ulosDT.Value);
+
+            try
+            {
+                if (varaukset.muokkaaVarausta(huoneNro, varausID, asiakasID, alkaenPVM, loppuenPVM))
+                {
+                    MessageBox.Show("Muokattu", "Varauksen muokkaus", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                else
+                {
+                    MessageBox.Show("Muokkaus epäonnistui", "Varauksen muokkaus", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                varauksetDG.DataSource = varaukset.kaikkiVaraukset();
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show("Virhe " + ex.Message);
+            }
 
         }
     }

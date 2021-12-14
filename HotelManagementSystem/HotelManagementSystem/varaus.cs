@@ -104,5 +104,31 @@ namespace HotelManagementSystem
             return table;
 
         }
+
+        public bool muokkaaVarausta(int huonenro, int varausid, int anro, DateTime sisaan, DateTime ulos)
+        {
+            MySqlCommand komento = new MySqlCommand();
+            String paivityskysely = "UPDATE `varaukset` SET `HuoneenNro` =@hno, `AsiakkaanID` = @ano, `alkaenPVM` = @sis, `LoppuenPVM` = @ulo WHERE `varausID` = @vid";
+            komento.CommandText = paivityskysely;
+            komento.Connection = yhteys.OtaYhteys();
+
+            komento.Parameters.Add("@hno", MySqlDbType.Int32).Value = huonenro;
+            komento.Parameters.Add("@ano", MySqlDbType.Int32).Value = anro;
+            komento.Parameters.Add("@sis", MySqlDbType.DateTime).Value = sisaan;
+            komento.Parameters.Add("@ulo", MySqlDbType.DateTime).Value = ulos;
+            komento.Parameters.Add("@vid", MySqlDbType.Int32).Value = varausid;
+
+            yhteys.avaaYhteys();
+            if (komento.ExecuteNonQuery() == 1)
+            {
+                yhteys.suljeYhteys();
+                return true;
+            }
+            else
+            {
+                yhteys.suljeYhteys();
+                return false;
+            }
+        }
     }
 }

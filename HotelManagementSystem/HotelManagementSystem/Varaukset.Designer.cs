@@ -48,6 +48,8 @@ namespace HotelManagementSystem
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.asiakasCB = new System.Windows.Forms.ComboBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.asiakasIDTB = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.varauksetDG)).BeginInit();
             this.SuspendLayout();
@@ -229,11 +231,30 @@ namespace HotelManagementSystem
             this.asiakasCB.TabIndex = 38;
             this.asiakasCB.SelectedIndexChanged += new System.EventHandler(this.asiakasCB_SelectedIndexChanged);
             // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(62, 120);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(98, 18);
+            this.label4.TabIndex = 39;
+            this.label4.Text = "Asiakkaan ID:";
+            // 
+            // asiakasIDTB
+            // 
+            this.asiakasIDTB.Location = new System.Drawing.Point(173, 121);
+            this.asiakasIDTB.Name = "asiakasIDTB";
+            this.asiakasIDTB.Size = new System.Drawing.Size(173, 20);
+            this.asiakasIDTB.TabIndex = 40;
+            // 
             // Varaukset
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1043, 450);
+            this.Controls.Add(this.asiakasIDTB);
+            this.Controls.Add(this.label4);
             this.Controls.Add(this.asiakasCB);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.ulosDT);
@@ -284,5 +305,7 @@ namespace HotelManagementSystem
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.ComboBox asiakasCB;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.TextBox asiakasIDTB;
     }
 }
